@@ -32,5 +32,15 @@
         "friendsofphp/php-cs-fixer": "^2.17",
         "ext-fileinfo": "*"
     },
-    "bin": ["snappdf"]
+    "bin": ["snappdf"],
+    "scripts": {
+        "test:coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --color=always --coverage-clover=\"output/code-coverage/clover.xml\""
+          ],
+          "test:coverage-html": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --color=always --coverage-html=\"output/code-coverage\""
+          ]
+    }
 }
